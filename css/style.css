@@ -509,7 +509,7 @@ img {
 
 .top {
   height: 600px;
-  background: transparent url(../../img/mainvisual.png) no-repeat top center/cover;
+  background: transparent url(../img/mainvisual.png) no-repeat top center/cover;
   position: relative;
   overflow: hidden;
 }
