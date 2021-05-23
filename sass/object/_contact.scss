@@ -1,0 +1,330 @@
+.contact {
+  .contact-cont {
+    width: 800px;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .contact-form {
+    width: 100%;
+    padding: 60px;
+    background-color: cl(white);
+
+    @include mq('sp') {
+      padding: 20px;
+    }
+
+    // input
+    input[type="text"],
+    input[type="email"] {
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      appearance: none;
+      background-color: transparent;
+      background-image: none;
+      border: 1px solid #707070;
+      border-radius: 0;
+      color: inherit;
+      font-family: inherit;
+      font-size: 1em;
+      padding: 0.4em 0.8em;
+      width: 100%;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    // textarea
+    textarea {
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      appearance: none;
+      background-color: transparent;
+      background-image: none;
+      border: 1px solid #707070;
+      border-radius: 0;
+      color: inherit;
+      font-family: inherit;
+      font-size: 1em;
+      // 高さを案件に応じて変更する点は注意
+      height: 240px;
+      padding: 0.5em 0.9em;
+      width: 100%;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      resize: vertical;
+    }
+
+    // select
+    select {
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      appearance: none;
+      background: transparent url(../../img/select-arrow.svg) no-repeat center right 12px / 17px 14px;
+      border: 1px solid #707070;
+      border-radius: 0;
+      color: #CCCCCC;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 1em;
+      padding: 0.6em 0.8em;
+      width: 100%;
+    }
+
+    option {
+      &:first-child {
+        display: none;
+      }
+    }
+
+    // button
+    button {
+      -webkit-appearance: none;
+      background-image: none;
+      border: none;
+      border-radius: 0;
+      color: #fff;
+      cursor: pointer;
+      display: inline-block;
+      font-size: 1.6rem;
+      font-weight: bold;
+      margin: 0;
+      padding: 1em 2em;
+      text-decoration: none;
+      width: 304px;
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+      background: cl(blue) url(../../img/button-arrow-1.svg) no-repeat center right 12px / 17px 14px;
+
+
+      &:hover,
+      &:focus {
+        outline: none;
+      }
+
+      &::-moz-focus-inner {
+        border: none;
+        padding: 0;
+      }
+    }
+
+    // placeholder
+    input::-webkit-input-placeholder,
+    textarea::-webkit-input-placeholder {
+      color: #CCCCCC;
+      font-size: 1.4rem;
+    }
+
+    input:-moz-placeholder,
+    textarea:-moz-placeholder {
+      color: #CCCCCC;
+      font-size: 1.4rem;
+    }
+
+    input::-moz-placeholder,
+    textarea::-moz-placeholder {
+      color: #CCCCCC;
+      font-size: 1.4rem;
+    }
+
+    input:-ms-input-placeholder textarea:-ms-input-placeholder {
+      color: #CCCCCC;
+      font-size: 1.4rem;
+    }
+
+    // radio
+    input[type="radio"] {
+      display: none;
+
+      &+span {
+        cursor: pointer;
+        display: inline-block;
+        padding: 0 0 0 1.7em;
+        position: relative;
+
+        &:nth-child(n + 2) {
+          margin: 0 2em 0 0;
+
+          @include mq('sp') {
+            margin: 0 0.3em 0 0;
+          }
+        }
+
+        &::before {
+          -webkit-transform: translateY(-50%);
+          background: #fff;
+          border: 1px solid rgba(0, 0, 0, 0.16);
+          border-radius: 50%;
+          content: "";
+          display: block;
+          height: 20px;
+          left: 0;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 20px;
+        }
+
+        &::after {
+          -webkit-transform: translateY(-50%);
+          background: cl(blue);
+          border: 1px solid transparent;
+          border-radius: 50%;
+          content: "";
+          height: 10px;
+          left: 5px;
+          opacity: 0;
+          padding: 2px;
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          transition: all 0.3s ease 0s;
+          width: 10px;
+        }
+      }
+
+      &:checked+span {
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+
+    // checkbox
+    input[type="checkbox"] {
+      display: none;
+
+      &+span {
+        cursor: pointer;
+        display: inline-block;
+        padding: 0 0 0 50px;
+        position: relative;
+
+        @include mq('sp') {
+          padding: 0 0 0 35px;
+        }
+
+        &::before,
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+
+        &::before {
+          background: cl(white);
+          border: 1px solid #707070;
+          display: block;
+          left: 0;
+          width: 25px;
+          height: 25px;
+        }
+
+        &::after {
+          left: 0;
+          background: transparent url(../../img/check.svg) no-repeat center center/contain;
+          transition: all 0.3s ease 0s;
+          width: 25px;
+          height: 25px;
+          opacity: 0;
+          border: 1px solid transparent;
+        }
+      }
+
+      &:checked+span {
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+
+    .row {
+      display: flex;
+
+      @include mq('sp') {
+        display: block;
+      }
+
+      &:nth-child(n + 2) {
+        margin-top: 60px;
+
+        @include mq('sp') {
+          margin-top: 30px;
+        }
+      }
+
+      dt {
+        width: 160px;
+        padding-top: 12px;
+        @include lineHeightCrop($leading-normal);
+
+        @include mq('sp') {
+          width: 100%;
+        }
+      }
+
+      dd {
+        width: calc(100% - 160px);
+
+        @include mq('sp') {
+          width: 100%;
+          margin-top: 20px;
+        }
+      }
+
+      .contact-label {
+        font-weight: bold;
+        position: relative;
+
+        &.is-required {
+          &::after {
+            content: "必須";
+            position: absolute;
+            width: 44px;
+            height: 22px;
+            background-color: cl(red);
+            color: cl(white);
+            bottom: -30px;
+            left: 0;
+            line-height: 22px;
+            text-align: center;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 1.4rem;
+
+            @include mq('sp') {
+              top: 50%;
+              transform: translateY(-50%);
+              left: auto;
+              margin-left: 5px;
+            }
+          }
+        }
+      }
+    }
+
+    .contact-footer {
+      margin-top: 20px;
+    }
+
+    .contact-checkbox {
+      text-align: center;
+      margin-top: 56px;
+
+      span {
+        a {
+          text-decoration: underline;
+          font-weight: bold;
+        }
+      }
+    }
+
+    .button-wrap {
+      text-align: center;
+      margin-top: 30px;
+    }
+  }
+}
