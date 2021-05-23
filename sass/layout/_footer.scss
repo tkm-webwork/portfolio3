@@ -1,0 +1,145 @@
+.footer {
+  padding: 47px 0 24px;
+  background: linear-gradient(to bottom, #666666, #333333);
+
+  @include mq('sp') {
+    padding: 30px 0 24px;
+  }
+
+  .footer-cont {
+    display: flex;
+
+    @include mq('sp') {
+      display: block;
+    }
+  }
+
+  .footer-info {
+    width: 35%;
+    padding: 12px 0 0;
+
+    @include mq('sp') {
+      width: 100%;
+      padding: 0;
+    }
+  }
+
+  .footer-logo {
+    width: 205px;
+    max-width: 100%;
+
+    @include mq('sp') {
+      margin: 0 auto;
+    }
+
+    img {
+      display: block;
+    }
+  }
+
+  .info-wrap {
+    margin-top: 29px;
+    color: cl(white);
+    font-size: 1.4rem;
+
+    @include mq('sp') {
+      text-align: center;
+    }
+
+    p {
+      &:nth-child(2) {
+        margin-top: 4px;
+      }
+    }
+  }
+
+  .footer-nav {
+    width: 50%;
+    padding: 8px 9px 0;
+
+    @include mq('sp') {
+      width: 100%;
+      margin-top: 20px;
+      padding: 0;
+    }
+  }
+
+  .footer-list {
+    display: flex;
+    
+    @include mq('sp') {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+  .footer-item {
+    &:nth-child(n + 2) {
+      margin-left: 40px;
+
+      @include mq('tab') {
+        margin-left: 20px;
+      }
+
+      @include mq('sp') {
+        margin-left: 16px;
+      }
+    }
+
+    a {
+      color: cl(white);
+      transition: all 0.3s ease 0s;
+    }
+  }
+
+  .footer-sns {
+    width: 20%;
+    padding: 12px 0;
+
+    @include mq('tab') {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    @include mq('sp') {
+      width: 100%;
+      margin-top: 24px;
+      padding: 0;
+    }
+  }
+
+  .sns-list {
+    display: flex;
+    justify-content: flex-end;
+
+    @include mq('sp') {
+      justify-content: center;
+    }
+  }
+
+  .sns-item {
+    &:nth-child(n + 2) {
+      margin-left: 16px;
+    }
+
+    a {
+      transition: all 0.3s ease 0s;
+
+      img {
+        width: 30px;
+        display: block;
+      }
+    }
+  }
+
+  .copyright {
+    text-align: center;
+    color: cl(white);
+    font-size: 1.4rem;
+    margin-top: 38px;
+
+    @include mq('sp') {
+      margin-top: 40px;
+    }
+  }
+}
