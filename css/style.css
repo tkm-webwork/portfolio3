@@ -608,7 +608,7 @@ img {
 
 .top {
   height: 600px;
-  background: url(../../img/mainvisual.png) no-repeat top center/cover;
+  background: url(../img/mainvisual.png) no-repeat top center/cover;
   position: relative;
 }
 
