@@ -1,0 +1,121 @@
+.news {
+
+  .news-cont {
+    width: 800px;
+    max-width: 100%;
+    margin: 94px auto 0;
+
+    @include mq('sp') {
+      margin-top: 60px;
+    }
+  }
+
+  .news-item {
+    display: flex;
+    border-bottom: 1px solid #707070;
+    padding-top: 19px;
+    padding-bottom: 13px;
+
+    @include mq('sp') {
+      display: block;
+    }
+
+    &:first-child {
+      padding-top: 0;
+    }
+
+    &:last-child {
+      padding-bottom: 0;
+      border-bottom: 0;
+    }
+  }
+
+  .news-info {
+    display: flex;
+    width: 185px;
+
+    .news-date {
+      margin-top: 4px;
+      width: 85px;
+    }
+
+    .news-label {
+      margin-left: 20px;
+
+      a {
+        width: 80px;
+        border-radius: 4px;
+        background: #666666;
+        color: cl(white);
+        font-weight: bold;
+        height: 32px;
+        line-height: 32px;
+        display: block;
+        text-align: center;
+        transition: all .3s ease 0s;
+
+        &:hover {
+          opacity: .7;
+        }
+
+        &.is-blue {
+          background: cl(blue);
+        }
+
+        &.is-red {
+          background: cl(primary);
+        }
+      }
+    }
+  }
+
+  .news-text {
+    width: calc(100% - 185px);
+    margin-left: 20px;
+    margin-top: 5px;
+    line-height: (20 / 16);
+
+    a {
+      transition: all .3s ease 0s;
+
+      &:hover {
+        opacity: .7;
+      }
+    }
+
+    @include mq('sp') {
+      width: 100%;
+      margin-left: 0;
+      margin-top: 15px;
+    }
+  }
+
+  .more {
+    text-align: center;
+    margin-top: 57px;
+    padding-right: 14px;
+
+    a {
+      font-weight: bold;
+      color: cl(primary);
+      position: relative;
+      @include lineHeightCrop($leading-normal);
+      transition: all .3s ease 0s;
+
+      &:hover {
+        opacity: .7;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        background: url(../../img/news-arrow.png) no-repeat center center / contain;
+        width: 7px;
+        height: 11px;
+        top: 60%;
+        right: -13px;
+        transform: translateY(-50%);
+      }
+    }
+  }
+}

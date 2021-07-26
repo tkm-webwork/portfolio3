@@ -1,0 +1,348 @@
+.contact {
+  background: cl(gray);
+
+  .contact-cont {
+    width: 800px;
+    margin: 95px auto 0;
+    max-width: 100%;
+
+    @include mq('sp') {
+      margin-top: 60px;
+    }
+  }
+
+  .contact-form {
+    background: cl(white);
+    padding: 60px 60px 44px;
+
+    @include mq('sp') {
+      padding: 30px;
+    }
+  }
+
+  .contact-row {
+    display: flex;
+
+    @include mq('sp') {
+      display: block;
+    }
+
+    &:nth-child(n + 2) {
+      margin-top: 60px;
+
+      @include mq('sp') {
+        margin-top: 30px;
+      }
+    }
+  }
+
+  .contact-label {
+    font-weight: bold;
+    width: 160px;
+    margin-top: 7px;
+
+    &.is-required {
+      position: relative;
+
+      &::after {
+        content: "必須";
+        position: absolute;
+        width: 44px;
+        height: 22px;
+        background: cl(primary);
+        color: cl(white);
+        text-align: center;
+        border-radius: 4px;
+        font-weight: bold;
+        font-size: 1.4rem;
+        left: 0;
+        top: calc(100% - 4px);
+
+        @include mq('sp') {
+          left: calc(100% + 10px);
+          top: 50%;
+          transform: translateY(-50%);
+        }
+      }
+    }
+  }
+
+  .contact-input {
+    width: calc(100% - 160px);
+    max-width: 100%;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid #707070;
+    border-radius: 0;
+    color: inherit;
+    font-family: inherit;
+    font-size: 1.4rem;
+    padding: 0.53em 1em;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+
+    @include mq('sp') {
+      width: 100%;
+      margin-top: 15px;
+    }
+
+    &:focus {
+      border: 1px solid rgba(0, 0, 0, 0.32);
+      box-shadow: none;
+      outline: none;
+    }
+  }
+
+  .contact-select {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent url(../../img/select-arrow.png) no-repeat center right 12px / 17px 14px;
+    border: 1px solid #707070;
+    border-radius: 0;
+    color: #CCCCCC;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1em;
+    padding: 0.63em 0.8em;
+    width: calc(100% - 160px);
+    max-width: 100%;
+
+    @include mq('sp') {
+      width: 100%;
+      margin-top: 15px;
+    }
+  }
+
+  option {
+    &:first-child {
+      display: none;
+    }
+  }
+
+  .contact-textarea {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid #707070;
+    border-radius: 0;
+    color: inherit;
+    font-family: inherit;
+    font-size: 1.4rem;
+    height: 240px;
+    padding: 0.5em 1em;
+    width: calc(100% - 160px);
+    max-width: 100%;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    resize: vertical;
+
+    @include mq('sp') {
+      width: 100%;
+      margin-top: 15px;
+      height: 200px;
+    }
+
+    &:focus {
+      border: 1px solid rgba(0, 0, 0, 0.32);
+      box-shadow: none;
+      outline: none;
+    }
+  }
+
+  .contact-radio-wrap {
+    margin-top: 29px;
+
+    label {
+      display: inline-block;
+      margin-bottom: 10px;
+      &:nth-child(n + 2) {
+        margin-left: 32px;
+        @include mq('sp') {
+          margin-left: 0;
+        }
+      }
+    }
+
+    .contact-radio {
+      display: none;
+
+      &:checked+.contact-radio-part {
+
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+
+    .contact-radio-part {
+      cursor: pointer;
+      display: inline-block;
+      margin: 0;
+      padding: 0 0 0 1.7em;
+      position: relative;
+
+      @include mq('sp') {
+        padding: 0 0 0 1.5em;
+        
+      }
+
+      &::before {
+        -webkit-transform: translateY(-50%);
+        background: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.16);
+        border-radius: 50%;
+        content: "";
+        display: block;
+        left: 0;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 20px;
+        height: 20px;
+      }
+
+      &::after {
+        -webkit-transform: translateY(-50%);
+        background: cl(blue);
+        border: 1px solid transparent;
+        border-radius: 50%;
+        content: "";
+        height: 10px;
+        left: 5px;
+        opacity: 0;
+        padding: 2px;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: all 0.3s ease 0s;
+        width: 10px;
+      }
+    }
+  }
+
+  .contact-checkbox-wrap {
+    text-align: center;
+    margin-top: 58px;
+
+    @include mq('sp') {
+      margin-top: 35px;
+    }
+
+    .contact-checkbox {
+      display: none;
+
+      &:checked+.contact-checkbox-part {
+
+        &::after {
+          opacity: 1;
+        }
+      }
+    }
+
+    .contact-checkbox-part {
+      cursor: pointer;
+      display: inline-block;
+      margin: 0 0.2em 0;
+      padding: 0 0 0 3em;
+      position: relative;
+
+      @include mq('sp') {
+        font-size: 1.5rem;
+        padding: 0 0 0 2.4em;
+      }
+
+      &::before {
+        -webkit-transform: translateY(-50%);
+        background: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.16);
+        border-radius: 2px;
+        content: "";
+        display: block;
+        height: 25px;
+        left: 0;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 25px;
+      }
+
+      &::after {
+        -webkit-transform: translateY(-50%) rotate(-45deg);
+        border-bottom: 3px solid rgba(0, 0, 0, 0.32);
+        border-left: 3px solid rgba(0, 0, 0, 0.32);
+        content: "";
+        display: block;
+        height: 10px;
+        left: 3px;
+        margin-top: -0.2em;
+        opacity: 0;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%) rotate(-45deg);
+        transition: all 0.3s ease 0s;
+        width: 18px;
+      }
+
+      a {
+        text-decoration: underline;
+        font-weight: bold;
+        transition: all .3s ease 0s;
+
+        &:hover {
+          opacity: .7;
+        }
+      }
+    }
+  }
+
+  .contact-button {
+    margin-top: 30px;
+    text-align: center;
+
+    .button-submit {
+      width: 304px;
+      max-width: 100%;
+      height: 56px;
+      -webkit-appearance: none;
+      background-image: none;
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      display: inline-block;
+      font-size: 1em;
+      margin: 0 0 1em;
+      padding: 0.6em 2em;
+      text-decoration: none;
+      position: relative;
+      transition: all .3s ease 0s;
+
+      &:hover {
+        opacity: .7;
+      }
+
+      @include mq('sp') {
+        width: 250px;
+        max-width: 100%;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        background: url(../../img/button-arrow.png) no-repeat center center /contain;
+        width: 17px;
+        height: 16px;
+        top: 50%;
+        right: 12px;
+        transform: translateY(-50%);
+      }
+    }
+  }
+}

@@ -1,0 +1,204 @@
+.header {
+  background: cl(blue);
+  height: $header-height-pc;
+  width: 100%;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.16);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: index(header);
+
+  @include mq('sp') {
+    height: $header-height-sp;
+  }
+
+  .header-inner {
+    display: flex;
+    align-items: center;
+  }
+
+  .header-logo {
+    width: 205px;
+
+    @include mq('sp') {
+      width: 182px;
+    }
+
+    img {
+      display: block;
+    }
+  }
+
+  .header-nav {
+    margin-left: auto;
+
+    @include mq('sp') {
+      display: none;
+    }
+
+    .nav-list {
+      display: flex;
+      align-items: center;
+
+      .nav-item {
+        &:nth-child(n + 2) {
+          margin-left: 40px;
+        }
+
+        a {
+          color: cl(white);
+          text-transform: capitalize;
+          height: inherit;
+          position: relative;
+          transition: all .3s ease 0s;
+
+          &::after {
+            content: "";
+            position: absolute;
+            background: transparent;
+            height: 2px;
+            width: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -10px;
+            transition: all .3s ease 0s;
+          }
+
+          &:hover,
+          &.is-active {
+            &::after {
+              background: cl(primary);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+/*=================================================================
+# drawer
+=================================================================*/
+// ハンバガーメニュー
+.drawer-icon {
+  position: fixed;
+  top: 20px;
+  right: 16px;
+  z-index: 10000;
+  display: none;
+  transition: all 0.3s ease 0s;
+  appearance: none;
+  background-color: transparent;
+  font: inherit;
+  border: none;
+  padding: 0;
+
+  @include mq('sp') {
+    display: block;
+  }
+
+  &.is-active {
+    transform: translateX(-200px);
+    .drawer-bar1 {
+      transform: rotate(-45deg);
+      top: 8px;
+    }
+    .drawer-bar2 {
+      display: none;
+    }
+    .drawer-bar3 {
+      transform: rotate(45deg);
+      top: 8px;
+    }
+  }
+}
+
+.drawer-bars {
+  width: 22px;
+  height: 20px;
+  display: block;
+  position: relative;
+  transition: all 0.5s ease 0s;
+
+  .drawer-bar1,
+  .drawer-bar2,
+  .drawer-bar3 {
+    position: absolute;
+    width: 22px;
+    height: 4px;
+    background: #fff;
+    top: 0;
+    left: 0;
+  }
+
+  .drawer-bar1 {
+    top: 0;
+  }
+
+  .drawer-bar2 {
+    top: 8px;
+  }
+
+  .drawer-bar3 {
+    top: 16px;
+  }
+}
+
+// ドロワー本体
+.drawer-content {
+  width: 200px;
+  height: 100%;
+  background: #fff;
+  position: fixed;
+  z-index: 9999;
+  right: 0;
+  top: 0;
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.16);
+  transform: translateX(105%);
+  transition: all 0.3s ease 0s;
+
+  &.is-active {
+    transform: translateX(0);
+  }
+}
+
+.drawer-items {
+
+  .drawer-item {
+    border-bottom: 1px dotted #707070;
+    
+    a {
+      display: block;
+      color: #707070;
+      padding: 15px 20px;
+      position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          background: url(../../img/arrow-b.png) no-repeat center center / contain;
+          width: 8px;
+          height: 11px;
+          right: 20px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+    }
+  }
+}
+
+.drawer-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9998;
+  background: rgba(0, 0, 0, 0.8);
+  display: none;
+  transition: all 0.5s ease 0s;
+
+  &.is-active {
+    display: block;
+  }
+}

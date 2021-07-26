@@ -1,0 +1,63 @@
+.inner {
+  width: 1200px;
+  max-width: 100%;
+  margin: 0 auto;
+  height: inherit;
+
+  @include mq('tab') {
+    padding-left: $padding-tab;
+    padding-right: $padding-tab;
+  }
+
+  @include mq('sp') {
+    padding-left: $padding-sp;
+    padding-right: $padding-sp;
+  }
+}
+
+.cmn-button {
+  color: cl(white);
+  background-color: cl(blue);
+  border-radius: 8px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  font-weight: bold;
+}
+
+.section {
+  padding-top: 100px;
+  padding-bottom: 120px;
+
+  @include mq('sp') {
+    padding-top: 50px;
+    padding-bottom: 60px;
+  }
+}
+
+.section-title {
+  font-size: 4.8rem;
+  font-weight: bold;
+  @include lineHeightCrop($leading-snug);
+  text-align: center;
+  text-transform: capitalize;
+  position: relative;
+
+  @include mq('sp') {
+    font-size: 3rem;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 4px;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    background: cl(blue);
+
+    @include mq('sp') {
+      width: 40px;
+      height: 3px;
+    }
+  }
+}

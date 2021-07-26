@@ -1,0 +1,30 @@
+.totop {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: index(floating);
+  opacity: 0;
+  visibility: hidden;
+  transition: all .3s ease 0s;
+
+  &.is-show {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  a {
+    img {
+      transition: all .3s ease 0s;
+      display: block;
+      width: 60px;
+
+      @include mq('sp') {
+        width: 35px;
+      }
+
+      &:hover {
+        opacity: .7;
+      }
+    }
+  }
+}

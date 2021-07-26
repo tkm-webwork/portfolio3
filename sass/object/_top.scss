@@ -1,0 +1,67 @@
+.top {
+  height: 600px;
+  background: url(../../img/mainvisual.png) no-repeat top center / cover;
+  position: relative;
+
+  @include mq('sp') {
+    height: 450px;
+  }
+
+  .top-cont {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 100%;
+
+    @include mq('sp') {
+      padding: 0 12px;
+    }
+  }
+
+  .top-title {
+    font-size: 6.4rem;
+    font-weight: bold;
+    @include lineHeightCrop($leading-snug);
+
+    @include mq('sp') {
+      font-size: 4rem;
+    }
+  }
+
+  .top-lead {
+    font-size: 2.4rem;
+    font-weight: bold;
+    margin-top: 24px;
+    @include lineHeightCrop($leading-snug);
+
+    @include mq('sp') {
+      font-size: 2rem;
+      margin-top: 20px;
+    }
+  }
+
+  .top-button {
+    a {
+      display: inline-block;
+      width: 384px;
+      max-width: 100%;
+      height: 72px;
+      line-height: 72px;
+      font-size: 2.4rem;
+      margin: 42px 0 0;
+      transition: all .3s ease 0s;
+
+      &:hover {
+        opacity: .8;
+      }
+      @include mq('sp') {
+        width: 250px;
+        height: 56px;
+        line-height: 56px;
+        font-size: 2rem;
+      }
+    }
+  }
+}
