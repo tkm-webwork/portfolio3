@@ -1,7 +1,0 @@
-.main {
-  margin-top: $header-height-pc;
-
-  @include mq('sp') {
-    margin-top: $header-height-sp;
-  }
-}
